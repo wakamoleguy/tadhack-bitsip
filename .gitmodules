@@ -1,0 +1,3 @@
+[submodule "sip.js"]
+	path = sip.js
+	url = https://github.com/wakamoleguy/sip.js.git

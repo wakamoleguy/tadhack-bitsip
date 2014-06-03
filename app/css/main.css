@@ -1,0 +1,72 @@
+/** Components **/
+#templates { display: none !important; }
+html {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+li {
+    list-style: none;
+    display: inline-block;
+    margin: 0.5em;
+    background: darkgreen;
+}
+
+video { background: yellow; }
+
+/** Layout **/
+body {
+    min-height: 100%;
+    width: 100%;
+    background: darkblue;
+}
+
+.layout-breve {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    width: 60em;
+    max-width: 60em;
+    margin: 3em auto;
+
+    background: grey;
+    overflow: auto;
+}
+
+.layout-major {
+    width: 60%;
+    border-right: 1px dashed black;
+    padding-right: 5%;
+}
+
+.layout-minor {
+    width: 30%;
+}
+
+.layout-major, .layout-minor {
+    float: left;
+    text-align: left;
+    height: 100%;
+}
+
+.layout-major + .layout-minor,
+.layout-minor + .layout-major {
+    float: right;
+}
+
+.layout-minor + .layout-major {
+    border-right: none;
+    border-left: 1px dashed black;
+    padding-right: 0;
+    padding-left: 5%;
+}
+

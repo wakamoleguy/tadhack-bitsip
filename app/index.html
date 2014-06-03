@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Win At Life</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+
+  </head>
+  <body>
+    <h1>Win At Life</h1>
+
+    <section id="pre-call" class="layout-breve">
+      <div id="targets" class="layout-major">
+        <h2>Call Now</h2>
+
+        Start up a conversation with one of these people immediately!
+
+        <h3>People</h3>
+        <ul id="people">
+          <li>
+            <h4 class="name">James</h4>
+            <span class="rate">1 BTC/min</span>
+          </li>
+          <li>
+            <h4 class="name">Eric</h4>
+            <span class="rate">2 BTC/min</span>
+          </li>
+          <li>
+            <h4 class="name">Will</h4>
+            <span class="rate">5 BTC/min</span>
+          </li>
+        </ul>
+
+        <h3>Groups</h3>
+        <ul id="groups">
+          <li>
+            <h4 class="name">Math Whizzes</h4>
+            <span class="rate">1 BTC/min</span>
+          </li>
+          <li>
+            <h4 class="name">Python Help</h4>
+            <span class="rate">2 BTC/min</span>
+          </li>
+          <li>
+            <h4 class="name">'Other' Needs</h4>
+            <span class="rate">15 BTC/min</span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="meeting" class="layout-minor">
+        <h2>Set Up A Meeting</h2>
+
+        Create a link that can be shared with your friend or client.
+
+        <button type="button" id="meeting-create">Go!</button>
+      </div>
+
+    </section>
+
+    <section id="in-call" class="layout-breve">
+      <h2>Will Mitchell</h2>
+      <section id="call-info" class="layout-minor">
+        <div id="btc-rate">1 BTC/min</div>
+        <div id="btc-paid">10.3 BTC</div>
+        <button type="button" id="btc-request">Request A One-Time Payment</button>
+        <button type="button" id="btc-update">Adjust BTC Rate</button>
+      </section>
+
+      <section id="call-media" class="layout-major">
+        <video id="remote-stream"></video>
+        <div id="chat">
+          Chat goes here...
+        </div>
+      </section>
+    </section>
+
+    <!-- Templates -->
+    <section id="templates">
+      <div id="person-template">
+        <h4 class="name"></h4>
+        <span><span class="rate"></span> BTC/min</span>
+      </div>
+      <div id="group-template">
+        <h4 class="name"></h4>
+        <span><span class="rate"></span> BTC/min</span>
+      </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>window.app = {};</script>
+    <script src="js/sip.js"></script>
+    <script src="js/model-bitcoin.js"></script>
+    <script src="js/model-onsip.js"></script>
+    <script src="js/view-home.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

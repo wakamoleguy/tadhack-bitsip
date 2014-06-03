@@ -1,0 +1,16 @@
+{
+  "name": "tadhack-will-mitchell",
+  "title": "TADHack - Will Mitchell",
+  "description": "TADHack entry for Will Mitchell",
+  "version": "0.0.1",
+  "author": "Will Mitchell <will@onsip.com>",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-cli": "~0.1.6",
+    "grunt-grunt": "~0.2.2",
+    "grunt-contrib-concat": "~0.1.3"
+  },
+  "engines": {
+    "node": ">=0.8"
+  }
+}
