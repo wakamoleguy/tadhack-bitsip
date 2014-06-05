@@ -13,20 +13,20 @@
 
     <section id="wallet" class="layout-semibreve">
       <header>
-        <h2>Wallet</h2>
-        <button id="balance"><span id="total-balance">3</span> BTC</button>
-
-        <ul>
-          <li class="wallet-address">
-            <span class="pub">foobarbaz</span>
-            <span class="balance">2 BTC</span>
-          </li>
-          <li>
-            <span class="pub">123abc456</span>
-            <span class="balance">1 BTC</span>
-          </li>
-        </ul>
+        <h2>Your Bitcoin Wallet</h2>
+        <button id="balance">Balance: <span id="total-balance">3</span> BTC</button>
       </header>
+
+      <ul>
+        <li class="wallet-address">
+          <span class="pub">foobarbaz</span>
+          <span class="balance">2 BTC</span>
+        </li>
+        <li>
+          <span class="pub">123abc456</span>
+          <span class="balance">1 BTC</span>
+        </li>
+      </ul>
     </section>
 
     <section id="pre-call" class="layout-breve">
@@ -37,34 +37,10 @@
 
         <h3>People</h3>
         <ul id="people">
-          <li>
-            <h4 class="name">James</h4>
-            <span class="rate">1 BTC/min</span>
-          </li>
-          <li>
-            <h4 class="name">Eric</h4>
-            <span class="rate">2 BTC/min</span>
-          </li>
-          <li>
-            <h4 class="name">Will</h4>
-            <span class="rate">5 BTC/min</span>
-          </li>
         </ul>
 
         <h3>Groups</h3>
         <ul id="groups">
-          <li>
-            <h4 class="name">Math Whizzes</h4>
-            <span class="rate">1 BTC/min</span>
-          </li>
-          <li>
-            <h4 class="name">Python Help</h4>
-            <span class="rate">2 BTC/min</span>
-          </li>
-          <li>
-            <h4 class="name">'Other' Needs</h4>
-            <span class="rate">15 BTC/min</span>
-          </li>
         </ul>
       </div>
 
@@ -73,10 +49,10 @@
 
         <form>
           <label for="register-name">Name</label>
-          <input type="text" id="register-name"/>
+          <input type="text" id="register-name" required/>
 
           <label for="register-rate">Rate</label>
-          <input type="number" id="register-rate"/>
+          <input type="number" id="register-rate" required/>
 
           <label for="register-isgroup">Group?</label>
           <input type="checkbox" id="register-isgroup"/>
@@ -107,12 +83,16 @@
     <!-- Templates -->
     <section id="templates">
       <div id="person-template">
-        <h4 class="name"></h4>
-        <span><span class="rate"></span> BTC/min</span>
+        <button type="button">
+          <strong class="name"></strong>
+          <div><span class="rate"></span> BTC/min</div>
+        </button>
       </div>
       <div id="group-template">
-        <h4 class="name"></h4>
-        <span><span class="rate"></span> BTC/min</span>
+        <button type="button">
+          <strong class="name"></strong>
+          <div><span class="rate"></span> BTC/min</div>
+        </button>
       </div>
     </section>
 

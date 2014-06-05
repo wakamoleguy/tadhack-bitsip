@@ -20,6 +20,8 @@
     // Wire stuff together now, please.
     this.homeView.onactivate = function (name) {
       console.log('Activated a thingy: ', name);
+      var html = document.documentElement.classList;
+      html.contains('in-call') ? html.remove('in-call') : html.add('in-call');
     };
 
     this.homeView.onregistersubmit = function (name, address, rate, isGroup) {
