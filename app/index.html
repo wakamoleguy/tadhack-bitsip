@@ -11,6 +11,24 @@
   <body>
     <h1>Win At Life</h1>
 
+    <section id="wallet" class="layout-semibreve">
+      <header>
+        <h2>Wallet</h2>
+        <button id="balance"><span id="total-balance">3</span> BTC</button>
+
+        <ul>
+          <li class="wallet-address">
+            <span class="pub">foobarbaz</span>
+            <span class="balance">2 BTC</span>
+          </li>
+          <li>
+            <span class="pub">123abc456</span>
+            <span class="balance">1 BTC</span>
+          </li>
+        </ul>
+      </header>
+    </section>
+
     <section id="pre-call" class="layout-breve">
       <div id="targets" class="layout-major">
         <h2>Call Now</h2>
@@ -50,12 +68,21 @@
         </ul>
       </div>
 
-      <div id="meeting" class="layout-minor">
-        <h2>Set Up A Meeting</h2>
+      <div id="register" class="layout-minor">
+        <h2>Get Paid To Talk</h2>
 
-        Create a link that can be shared with your friend or client.
+        <form>
+          <label for="register-name">Name</label>
+          <input type="text" id="register-name"/>
 
-        <button type="button" id="meeting-create">Go!</button>
+          <label for="register-rate">Rate</label>
+          <input type="number" id="register-rate"/>
+
+          <label for="register-isgroup">Group?</label>
+          <input type="checkbox" id="register-isgroup"/>
+
+          <button id="meeting-create">Go!</button>
+        </form>
       </div>
 
     </section>
@@ -92,9 +119,11 @@
     <!-- JavaScript -->
     <script>window.app = {};</script>
     <script src="js/sip.js"></script>
+    <script src="js/bitcoinjs-min.js"></script>
     <script src="js/model-bitcoin.js"></script>
     <script src="js/model-onsip.js"></script>
     <script src="js/view-home.js"></script>
+    <script src="js/view-wallet.js"></script>
     <script src="js/main.js"></script>
 
   </body>

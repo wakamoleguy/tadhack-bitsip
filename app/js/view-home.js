@@ -5,7 +5,11 @@
 
   var people = document.getElementById('people');
   var groups = document.getElementById('groups');
-  var meetingButton = document.getElementById('meeting-create');
+  var registerForm = document.querySelector('#register form');
+  var registerName = document.getElementById('register-name');
+  var registerRate = document.getElementById('register-rate');
+  var registerIsGroup = document.getElementById('register-isgroup');
+
 
   var templateCache = {};
 
@@ -28,8 +32,17 @@
   }
 
   function HomeView() {
-    meetingButton.addEventListener('click', function () {
-      this.onmeetingcreate && this.onmeetingcreate();
+    registerForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      this.onregistersubmit && this.onregistersubmit(
+        registerName.value,
+        encodeURIComponent(registerName.value) + '@disuo.onsip.com',
+        registerRate.value,
+        registerIsGroup.checked
+      );
+
+      registerName.value = registerRate.value = '';
     }.bind(this), false);
   }
 
@@ -38,6 +51,8 @@
       function onActivate() {
         this.onactivate && this.onactivate(name);
       }
+
+      if (document.querySelector('[data-name="' + name + '"]')) return;
 
       var templateId = isGroup ? 'group-template' : 'person-template';
       var node = new Template(templateId, 'li', {

@@ -2,6 +2,7 @@
 #templates { display: none !important; }
 html {
     text-align: center;
+    font-size: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -27,19 +28,27 @@ body {
     min-height: 100%;
     width: 100%;
     background: darkblue;
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
 }
 
-.layout-breve {
+.layout-breve,
+.layout-semibreve {
     position: relative;
     top: 0;
     left: 0;
 
-    width: 60em;
+    width: 100%;
     max-width: 60em;
     margin: 3em auto;
 
     background: grey;
     overflow: auto;
+}
+
+.layout-semibreve {
+    max-width: 30em;
 }
 
 .layout-major {
@@ -70,3 +79,26 @@ body {
     padding-left: 5%;
 }
 
+/** Interactions **/
+
+#wallet {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    background: none;
+}
+
+#wallet h2,
+#wallet ul {
+    visibility: hidden;
+}
+
+#wallet.open {
+    background: cyan;
+}
+
+#wallet.open h2,
+#wallet.open ul {
+    visibility: visible;
+}
