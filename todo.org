@@ -1,0 +1,19 @@
+* Session
+** Click a button, invite a session.
+*** Invite -->
+*** <-- 200 okay
+
+*** bitcoin
+**** <-- data: pub key
+**** Make pool tx (my pub key, his pub key)
+**** Make nlocktime tx
+**** data: Send tx *hash* for signing -->
+**** <-- signed
+
+*** ui
+**** standard call UI stuff.
+
+*** Send partial tx as time goes on
+**** update counter
+**** receive partial tx --> update counter
+

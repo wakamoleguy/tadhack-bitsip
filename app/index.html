@@ -14,7 +14,7 @@
     <section id="wallet" class="layout-semibreve">
       <header>
         <h2>Your Bitcoin Wallet</h2>
-        <button id="balance">Balance: <span id="total-balance">3</span> BTC</button>
+        <button id="balance">Balance: <span id="total-balance">100</span> BTC</button>
       </header>
 
       <ul>
@@ -65,18 +65,18 @@
 
     <section id="in-call" class="layout-breve">
       <h2>Will Mitchell</h2>
-      <section id="call-info" class="layout-minor">
+      <form id="call-info" class="layout-minor">
         <div id="btc-rate">1 BTC/min</div>
-        <div id="btc-paid">10.3 BTC</div>
-        <button type="button" id="btc-request">Request A One-Time Payment</button>
-        <button type="button" id="btc-update">Adjust BTC Rate</button>
-      </section>
+        <div id="call-balance">0 BTC</div>
+        <h3>Request More BTC</h3>
+        <label for="btc-input">Amount</label>
+        <input type="number" id="btc-input" />
+        <button id="btc-request">Request BTC</button>
+      </form>
 
       <section id="call-media" class="layout-major">
         <video id="remote-stream"></video>
-        <div id="chat">
-          Chat goes here...
-        </div>
+        <button type="button" id="terminate" class="evil">Bye!</button>
       </section>
     </section>
 
@@ -104,6 +104,7 @@
     <script src="js/model-onsip.js"></script>
     <script src="js/view-home.js"></script>
     <script src="js/view-wallet.js"></script>
+    <script src="js/view-call.js"></script>
     <script src="js/main.js"></script>
 
   </body>

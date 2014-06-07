@@ -122,38 +122,9 @@ ua.on('invite', function (session) {
 });
 
 /** BitCoin functions **/
-var unspent = [{
-  
-
-}];
-
-function createTx(parsed) {
-
-  var opts = {
-    remainderOut: {
-      address: 'mizqLFZiihyy5qcu1CyYkeziUtibLJEBxu'
-    }
-  };
-
-  var tx = new TransactionBuilder(opts).
-    setUnspent(parsed.unspent).
-    setOutputs(parsed.outs).
-    sign(keys).
-    build();
-}
-
-global.createTx = createTx;
-
 var Buffers = require('buffers');
 
 global.sendRawTx = function (raw) {
-/*  var buffer = bitcore.base58.encode(raw.
-    match(/.{2}/g).
-    map(function (val) {
-      return parseInt(val, 16);
-    }));
-*/
-
   var buffer = new Buffer(raw.
     match(/.{2}/g).
     map(function (hex) {

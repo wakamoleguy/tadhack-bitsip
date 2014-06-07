@@ -1,9 +1,11 @@
 // model-bitcoin
 (function () {
+  var privateKey = 'KwgdPaRSLXo6Bxek3RFQMqbdd2AHzJ1QSAeY9fV2HzkLCrRowWUk';
+  var privateKeyB = 'L2cTPxid8mY4AmJ8eHJgR2wEtyk8cjD9BjToKC55qj5tngBwWqdn';
 
-  var privateKey;
-
-  var unspentTransactions = [];
+  var unspentTransactions = [
+    'b92f852a7a4965ce3900b45831c656c450ba44d1bff46e09ba5036481f60160b'
+  ];
 
   function connect() {
     this.session = this.ua.invite('will.2@disuo.onsip.com');
@@ -18,6 +20,8 @@
 
   function BitcoinModel(SIP) {
     var bcm = this;
+
+    this.privateKey = privateKey || Bitcoin.ECKey.makeRandom();
 
     this.ua = new SIP.UA({
       register: false,
@@ -35,18 +39,16 @@
       }
     });
 
-    privateKey || (privateKey = Bitcoin.ECKey.makeRandom());
-
-    connect.call(this);
+//    connect.call(this);
   }
 
   BitcoinModel.prototype = {
-    createTx: function () {
-      // Make a private key
-      var key = Bitcoin.ECKey.makeRandom();
+    createPoolTx: function () {
+      console.log('Private key: ', this.privateKey.toWIF());
+      console.log('Public key: ', this.privateKey.pub.getAddress().toString());
 
-      console.log('Private key: ', key.toWIF());
-      console.log('Public key: ', key.pub.getAddress().toString());
+      
+
       debugger;
     },
 

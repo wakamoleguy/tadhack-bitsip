@@ -19,13 +19,16 @@
 
     var node = document.createElement(tag);
 
-    var key;
+    var key, keyNode;
 
     node.innerHTML = template.innerHTML;
 
     for (key in params) {
       node.dataset[key] = params[key];
-      node.querySelector('.' + key).innerHTML = params[key];
+      keyNode = node.querySelector('.' + key);
+      if (keyNode) {
+          keyNode.innerHTML = params[key];
+      }
     }
 
     return node;
@@ -47,9 +50,9 @@
   }
 
   HomeView.prototype = {
-    createTarget: function (name, rate, isGroup) {
+    createTarget: function (name, rate, address, isGroup) {
       function onActivate() {
-        this.onactivate && this.onactivate(name);
+        this.onactivate && this.onactivate(node.dataset);
       }
 
       if (document.querySelector('[data-name="' + name + '"]')) return;
@@ -57,7 +60,8 @@
       var templateId = isGroup ? 'group-template' : 'person-template';
       var node = new Template(templateId, 'li', {
         name: name,
-        rate: rate
+        rate: rate,
+        address: address
       });
 
       node.addEventListener('click', onActivate.bind(this), false);

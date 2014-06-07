@@ -63,6 +63,16 @@ button:active {
     margin: 0.25em auto 0 auto;
 }
 
+button.evil {
+    background: #f06060;
+    border-color: #f06060;
+}
+
+button.evil:hover {
+    background: transparent;
+    border-color: #ab3c3c;
+}
+
 label {
     float: left;
     clear: left;
@@ -74,7 +84,9 @@ input {
     float: left;
 }
 
-video { background: yellow; }
+video {
+    max-height: 10em;
+}
 
 /** Layout **/
 body {
@@ -96,6 +108,10 @@ body {
 
     background: grey;
     overflow: auto;
+}
+
+.layout-breve {
+    margin: 0 auto;
 }
 
 .layout-semibreve {
@@ -203,7 +219,6 @@ body > section.layout-semibreve {
 }
 
 .layout-breve {
-    margin-top: 0;
     background: #4d5c7f;
     color: #b0bee0;
 
@@ -226,4 +241,8 @@ body > section.layout-semibreve {
 html.in-call #in-call {
     visibility: visible;
     opacity: 1;
+}
+
+#call-info input, #call-info label {
+    float: none;
 }

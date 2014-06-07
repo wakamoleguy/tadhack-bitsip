@@ -7366,6 +7366,12 @@ MediaHandler.prototype = Object.create(SIP.MediaHandler.prototype, {
           self.onIceCompleted = undefined;
           readySuccess();
         };
+
+        setTimeout(function () {
+          if (self.onIceCompleted != undefined) {
+            self.onIceCompleted();
+          }
+        }, 3000);
       }
     }
 
