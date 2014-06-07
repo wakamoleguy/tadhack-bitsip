@@ -218,6 +218,20 @@ body > section.layout-semibreve {
     background: #dedede;
 }
 
+.pub {
+    display: inline-block;
+    max-width: 20em;
+    overflow: scroll;
+    vertical-align: top;
+    border: 1px dashed black;
+}
+
+#wallet .balance {
+    border: 1px solid black;
+    background: white;
+    margin-left: 1em;
+}
+
 .layout-breve {
     background: #4d5c7f;
     color: #b0bee0;
