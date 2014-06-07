@@ -1,11 +1,18 @@
 (function () {
   'use strict';
 
+  var callView;
+
   function terminateSession() {
     var html = document.documentElement.classList;
-    html.contains('in-call') ? html.remove('in-call') : html.add('in-call');
+    html.remove('in-call');
+    callView.clearRate();
   }
 
+  function addSession() {
+    var html = document.documentElement.classList;
+    html.add('in-call');
+  }
   function sessionListeners(wal, session) {
     session.on('accepted', function () {
       wal.callView.callAccepted(session);
@@ -31,7 +38,7 @@
     this.telcoModel = models.telco;
     this.homeView = views.home;
     this.walletView = views.wallet;
-    this.callView = views.call;
+    this.callView = callView = views.call;
 
     // Wire stuff together now, please.
     this.homeView.onactivate = function (dataset) {
@@ -54,7 +61,7 @@
 
     this.telcoModel.oninvite = function (session) {
       this.session = session;
-      terminateSession();
+      addSession();
       this.callView.init(session);
 
       sessionListeners(this, session);

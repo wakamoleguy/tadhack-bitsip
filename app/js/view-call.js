@@ -99,6 +99,13 @@
           callBalance.innerHTML = c;
         }
       }.bind(this), INTERVAL * 1000);
+    },
+
+    clearRate: function () {
+      if (rateInterval) {
+        window.clearInterval(rateInterval);
+        rateInterval = 0;
+      }
     }
 
   };
