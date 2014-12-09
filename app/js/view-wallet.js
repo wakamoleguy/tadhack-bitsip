@@ -28,6 +28,7 @@
     this.isWalletOpen = false;
 
     balance.addEventListener('click', function () {
+      balance.blur();
       if (this.isWalletOpen) {
         this.walletClose();
       } else {

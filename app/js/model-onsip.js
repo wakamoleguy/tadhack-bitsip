@@ -1,6 +1,6 @@
 // model-onsip
 (function () {
-  var DISCO = 'disco2@disuo.onsip.com';
+  var DISCO = 'disco9@disuo.onsip.com';
 
   var targets = {};
 

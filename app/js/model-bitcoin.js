@@ -1,5 +1,9 @@
 // model-bitcoin
 (function () {
+
+
+
+
   var privateKey = 'KwgdPaRSLXo6Bxek3RFQMqbdd2AHzJ1QSAeY9fV2HzkLCrRowWUk';
   var privateKeyB = 'L2cTPxid8mY4AmJ8eHJgR2wEtyk8cjD9BjToKC55qj5tngBwWqdn';
 
@@ -18,6 +22,7 @@
       });
   }
 
+  // TODO - takes myWIF (like Client)
   function BitcoinModel(SIP) {
     var bcm = this;
 
@@ -39,15 +44,16 @@
       }
     });
 
-//    connect.call(this);
+    connect.call(this);
   }
 
   BitcoinModel.prototype = {
+    // TODO - takes their pubkey (like Client-ish)
+    // TODO - make this do what client does
+    // TODO - finish by sending it to server?
     createPoolTx: function () {
       console.log('Private key: ', this.privateKey.toWIF());
       console.log('Public key: ', this.privateKey.pub.getAddress().toString());
-
-      
 
       debugger;
     },
@@ -56,7 +62,7 @@
       // Set up the pool
       console.log('I would get a bitcoin pool ready here');
     },
-    
+
     update: function (rate, telco) {
       // Create a new updated transaction from the pool.
       console.log('I would send or receive an updated rate here.');

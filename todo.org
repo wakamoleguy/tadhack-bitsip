@@ -1,3 +1,8 @@
+* "Log In"
+** Create a new bitcoin address.
+** Fund the bitcoin address with something (client, optional)
+** Probably want to save that priv key in your own wallet, 'case browser crashes
+
 * Session
 ** Click a button, invite a session.
 *** Invite -->
@@ -10,10 +15,17 @@
 **** data: Send tx *hash* for signing -->
 **** <-- signed
 
+**** Broadcast pool tx.
+
 *** ui
 **** standard call UI stuff.
 
 *** Send partial tx as time goes on
 **** update counter
 **** receive partial tx --> update counter
+**** AKA, create new spending tx.
+**** Send it to server.  Server signs and holds it.
 
+*** <-BYE->
+**** Server spends best tx.
+**** Client waits and spends nlocktime.

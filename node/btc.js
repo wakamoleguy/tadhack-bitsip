@@ -40,3 +40,4 @@ peerman.on('connection', function(conn) {
 });
 
 peerman.start();
+exports.peerman = peerman;
